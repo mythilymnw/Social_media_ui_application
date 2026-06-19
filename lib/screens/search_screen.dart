@@ -4,34 +4,25 @@ import '../widgets/common/custom_bottom_navigation.dart';
 import '../widgets/search/search_bar.dart';
 import '../widgets/search/trending_stories_section.dart';
 import '../widgets/search/trending_post_card.dart';
+
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
-@override
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
 
-      floatingActionButton: Container(
-        height: 58,
-        width: 58,
-        decoration: const BoxDecoration(
-          color: Color(0xFFFF6B3D),
-          shape: BoxShape.circle,
-        ),
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-        ),
-      ),
+    
+      extendBody: true, 
 
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.centerDocked,
-
+      
       bottomNavigationBar: const CustomBottomNavigation(
         currentIndex: 1,
       ),
 
       body: SafeArea(
+        bottom: false, 
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(
@@ -69,10 +60,14 @@ class SearchScreen extends StatelessWidget {
 
                 const SizedBox(height: 12),
 
-                // Add more posts if needed
                 const TrendingPostCard(),
+                
                 const SizedBox(height: 12),
+                
                 const TrendingPostCard(),
+
+                
+                const SizedBox(height: 120),
               ],
             ),
           ),
@@ -81,7 +76,3 @@ class SearchScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-

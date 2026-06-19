@@ -19,30 +19,40 @@ class NavItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(20),
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       child: SizedBox(
-        width: 60,
+        width: 65,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Icon(
-              icon,
-              size: 24,
-              color: isSelected
-                  ? AppColors.primary
-                  : Colors.grey,
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
+              decoration: BoxDecoration(
+                color: isSelected 
+                    ? AppColors.lightOrange // Light pastel pill background matching your file layout
+                    : Colors.transparent,
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Icon(
+                icon,
+                size: 24,
+                color: isSelected
+                    ? AppColors.primary // Sharp active accent orange
+                    : AppColors.navInactive, // Muted grey representation
+              ),
             ),
-            const SizedBox(height: 2),
+            const SizedBox(height: 4),
             Text(
               label,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontSize: 11,
-                fontWeight: FontWeight.w500,
+                fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
                 color: isSelected
                     ? AppColors.primary
-                    : Colors.grey,
+                    : AppColors.textSecondary, // Secondary text layout grey color setup
               ),
             ),
           ],

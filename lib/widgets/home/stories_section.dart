@@ -17,19 +17,19 @@ class StoriesSection extends StatelessWidget {
             isAddStory: true,
           ),
           StoryAvatar(
-            image: 'assets/images/story1.jpg',
+            image: 'assets/images/story_image1.jpeg',
             name: 'Brian S',
           ),
           StoryAvatar(
-            image: 'assets/images/story2.jpg',
+            image: 'assets/images/girl.jpg',
             name: 'Jennie',
           ),
           StoryAvatar(
-            image: 'assets/images/story3.jpg',
+            image: 'assets/images/background_image.webp',
             name: 'James',
           ),
           StoryAvatar(
-            image: 'assets/images/story4.jpg',
+            image: 'assets/images/profile1.jpeg',
             name: 'Roés',
           ),
         ],

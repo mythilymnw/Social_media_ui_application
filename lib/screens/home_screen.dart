@@ -5,9 +5,6 @@ import '../widgets/common/custom_bottom_navigation.dart';
 import '../widgets/home/main_post_card.dart';
 import '../widgets/home/stories_section.dart';
 import '../widgets/common/custom_app_bar.dart';
-// import 'search_screen.dart';
-// import 'message_screen.dart';
-// import 'profile_screen.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -16,29 +13,17 @@ class Homescreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
+      
+      //Keeps the body scrolling smoothly underneath the curved navigation bar cut-out
+      extendBody: true, 
 
-      floatingActionButton: Container(
-        height: 58,
-        width: 58,
-        decoration: const BoxDecoration(
-          color: AppColors.primary,
-          shape: BoxShape.circle,
-        ),
-        child: const Icon(
-          Icons.add,
-          color: Colors.white,
-          size: 28,
-        ),
-      ),
-
-      floatingActionButtonLocation:
-          FloatingActionButtonLocation.centerDocked,
-
+      // + button 
       bottomNavigationBar: const CustomBottomNavigation(
         currentIndex: 0,
       ),
 
       body: SafeArea(
+        bottom: false, 
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(
@@ -49,7 +34,7 @@ class Homescreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-               const CustomAppBar(
+                const CustomAppBar(
                   profileImage: 'assets/images/girl.jpg',
                 ),
 
@@ -78,9 +63,10 @@ class Homescreen extends StatelessWidget {
                 /// Second Post
                 const PostCard(
                   image: "assets/images/profile1.jpeg",
-                   showOverlay: false,
+                  showOverlay: false,
                 ),
 
+                
                 const SizedBox(height: 120),
               ],
             ),
@@ -90,8 +76,4 @@ class Homescreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
 
