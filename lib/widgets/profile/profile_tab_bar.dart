@@ -14,6 +14,7 @@ class ProfileTabBar extends SliverPersistentHeaderDelegate {
     );
   }
 @override
+
   bool shouldRebuild(ProfileTabBar oldDelegate) => false;
 }
 
