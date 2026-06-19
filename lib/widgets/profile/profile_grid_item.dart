@@ -3,7 +3,7 @@ class ProfileGridItem extends StatelessWidget {
   final String imageUrl;
   final String views;
   final double height;
-const ProfileGridItem({
+  const ProfileGridItem({
     super.key, 
     required this.imageUrl, 
     required this.height, 
