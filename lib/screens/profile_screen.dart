@@ -61,34 +61,34 @@ class _ExactStaggeredProfileGrid extends StatelessWidget {
                   child: Column(
                     children: const [
                       ProfileGridItem(
-                        imageUrl: 'https://unsplash.com', // Room design card
+                        imageUrl: 'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=687&auto=format&fit=crop',
                         views: '2.2K',
                         height: 230,
                       ),
                       SizedBox(height: 12),
                       ProfileGridItem(
-                        imageUrl: 'https://unsplash.com', // Blonde Girl portrait card
+                        imageUrl: 'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=687&auto=format&fit=crop', 
                         views: '',
-                        height: 270,
+                        height: 230,
                       ),
                     ],
                   ),
                 ),
                 const SizedBox(width: 12),
-                // Right Column Card Stack (Offset Heights exactly matching layout image)
+                // Right Column Card Stack 
                 Expanded(
                   child: Column(
                     children: const [
                       ProfileGridItem(
-                        imageUrl: 'https://unsplash.com', // Glowing Flower card
+                        imageUrl: 'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=687&auto=format&fit=crop', 
                         views: '2.28K',
-                        height: 250,
+                        height: 230,
                       ),
                       SizedBox(height: 12),
                       ProfileGridItem(
-                        imageUrl: 'https://unsplash.com', // Living room cream sofa card
+                        imageUrl: 'https://plus.unsplash.com/premium_photo-1670282393309-70fd7f8eb1ef?q=80&w=687&auto=format&fit=crop', 
                         views: '',
-                        height: 220,
+                        height: 230,
                       ),
                     ],
                   ),

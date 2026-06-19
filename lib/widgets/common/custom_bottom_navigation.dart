@@ -39,7 +39,7 @@ class CustomBottomNavigation extends StatelessWidget {
         shape: const CircularNotchedRectangle(),
         notchMargin: 10,
         child: SizedBox(
-          height: 85, // Increased height
+          height: 85, 
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

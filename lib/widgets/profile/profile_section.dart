@@ -9,7 +9,7 @@ class ProfileInfoSection extends StatelessWidget {
       child: Column(
         children: [
           const Text(
-            'Rachel Flowear',
+            'Rachelll  Flowear',
             style: TextStyle(
               fontSize: 22, 
               fontWeight: FontWeight.w700, 
@@ -43,7 +43,7 @@ class ProfileInfoSection extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFF34E1E), // Exact Bright Vermillion/Orange Red hex
+                    backgroundColor: const Color(0xFFF34E1E), 
                     foregroundColor: Colors.white,
                     // height: 46,
                     elevation: 0,
@@ -57,7 +57,7 @@ class ProfileInfoSection extends StatelessWidget {
                 child: OutlinedButton(
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
-                    backgroundColor: const Color(0xFFF5F5F5), // Exact pale light grey
+                    backgroundColor: const Color(0xFFF5F5F5), 
                     foregroundColor: Colors.black,
                     side: BorderSide.none,
                     // height: 46,

@@ -4,7 +4,7 @@ class ProfileHeader extends StatelessWidget {
   const ProfileHeader({super.key});
 @override
   Widget build(BuildContext context) {
-    // Detect top system cutout padding (Dynamic Island / Notch spacing)
+    // Detect top system cutout padding 
     final double statusBarHeight = MediaQuery.of(context).padding.top;
 
     return SliverAppBar(
@@ -14,12 +14,11 @@ class ProfileHeader extends StatelessWidget {
       elevation: 0,
       scrolledUnderElevation: 0,
       automaticallyImplyLeading: false, 
-      
-  
       leading: Padding(
         padding: EdgeInsets.only(
           left: 16.0, 
-          top: statusBarHeight > 0 ? 4.0 : 8.0, // Accounts gracefully for physical screen notches
+          
+          top: statusBarHeight > 0 ? 4.0 : 8.0, 
         ),
         child: Align(
           alignment: Alignment.centerLeft,
