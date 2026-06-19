@@ -24,8 +24,7 @@ class ProfileScreen extends StatelessWidget {
 }
 class _ExactStaggeredProfileGrid extends StatelessWidget {
   const _ExactStaggeredProfileGrid();
-
-  @override
+@override
   Widget build(BuildContext context) {
     return SliverMainAxisGroup(
       slivers: [
@@ -101,8 +100,5 @@ class _ExactStaggeredProfileGrid extends StatelessWidget {
     );
   }
 }
-
-
-
 
 
