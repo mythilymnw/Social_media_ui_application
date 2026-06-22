@@ -16,8 +16,7 @@ class MessagesScreen extends StatelessWidget {
         'isOnline': true,
         'hasUnread': false,
         'isSelected': false,
-        'imageUrl':('./assets/images/profile1.jpeg'),
-
+        'imageUrl': 'assets/images/profile1.jpeg',
       },
       {
         'name': 'Mike Lyne',
@@ -26,7 +25,7 @@ class MessagesScreen extends StatelessWidget {
         'isOnline': false,
         'hasUnread': true,
         'isSelected': true,
-        'imageUrl': './assets/images/women.jpg',
+        'imageUrl': 'assets/images/women.jpg',
       },
       {
         'name': 'Claire Kumas',
@@ -35,7 +34,7 @@ class MessagesScreen extends StatelessWidget {
         'isOnline': false,
         'hasUnread': false,
         'isSelected': false,
-        'imageUrl': './assets/images/girl.jpg',
+        'imageUrl': 'assets/images/girl.jpg',
       },
       {
         'name': 'Blair Dota',
@@ -44,7 +43,7 @@ class MessagesScreen extends StatelessWidget {
         'isOnline': false,
         'hasUnread': false,
         'isSelected': false,
-        'imageUrl': './assets/images/background_image.webp',
+        'imageUrl': 'assets/images/background_image.webp',
       },
       {
         'name': 'Molly Clark',
@@ -53,7 +52,7 @@ class MessagesScreen extends StatelessWidget {
         'isOnline': true,
         'hasUnread': false,
         'isSelected': false,
-        'imageUrl': './assets/images/women.jpg',
+        'imageUrl': 'assets/images/women.jpg',
       },
       {
         'name': 'Ashley Williams',
@@ -62,52 +61,71 @@ class MessagesScreen extends StatelessWidget {
         'isOnline': false,
         'hasUnread': false,
         'isSelected': false,
-        'imageUrl': './assets/images/story_image1.jpeg',
+        'imageUrl': 'assets/images/story_image1.jpeg',
       },
     ];
 
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
+       
         child: Stack(
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // --- HEADER SECTION ---
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(24, 20, 24, 16),
+                  padding: const EdgeInsets.fromLTRB(28, 48, 28, 24),
                   child: Row(
-                    
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Messages',
-                            style: AppTextStyles.heading,
+                            style: AppTextStyles.heading.copyWith(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w800,
+                              letterSpacing: 0.2,
+                              color: AppColors.textPrimary,
+                            ),
                           ),
-                          const SizedBox(height: 4),
+                          const SizedBox(height: 8),
                           Text(
                             'You have 2 new messages',
                             style: AppTextStyles.storyName.copyWith(
-                              color: AppColors.textSecondary,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                              color: const Color(0xFF9E9E9E),
                             ),
                           ),
                         ],
                       ),
-                      IconButton(
-                        icon: const Icon(Icons.search, size: 28, color: AppColors.textPrimary),
-                        onPressed: () {},
+                      Padding(
+                        padding: const EdgeInsets.only(top: 4.0),
+                        child: GestureDetector(
+                          onTap: () {},
+                          child: const Icon(
+                            Icons.search_rounded, 
+                            size: 25, 
+                            color: Colors.black,
+                          ),
+                        ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 10),
+                
+               
                 Expanded(
                   child: ListView.separated(
                     itemCount: chatData.length,
-                    separatorBuilder: (context, index) => const SizedBox(height: 12),
+                    
+                    padding: const EdgeInsets.only(bottom: 80),
+                    separatorBuilder: (context, index) => const SizedBox(height: 10),
                     itemBuilder: (context, index) {
                       final item = chatData[index];
                       return MessageItem(
@@ -122,58 +140,19 @@ class MessagesScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(height: 80), 
               ],
             ),
+            
+           
             Positioned(
               right: 24,
-              bottom: 100,
+              bottom: 24, 
               child: FloatingActionButton(
                 backgroundColor: AppColors.primary,
                 shape: const CircleBorder(),
                 elevation: 4,
                 onPressed: () {},
                 child: const Icon(Icons.add, color: Colors.white, size: 28),
-              ),
-            ),
-            Positioned(
-              left: 0,
-              right: 0,
-              bottom: 0,
-              child: Container(
-                height: 80,
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(255, 252, 254, 255),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(32),
-                    topRight: Radius.circular(32),
-                  ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.phone_outlined, size: 26),
-                      color: const Color.fromARGB(255, 255, 107, 61),
-                      onPressed: () {},
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.camera_alt_outlined, size: 26),
-                      color: const Color.fromARGB(255, 255, 107, 61),
-                      onPressed: () {},
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.chat_bubble_outline, size: 26),
-                      color: const Color.fromARGB(255, 189, 189, 189), 
-                      onPressed: () {},
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.people_outline, size: 26),
-                      color: const Color.fromARGB(255, 255, 107, 61),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
               ),
             ),
           ],

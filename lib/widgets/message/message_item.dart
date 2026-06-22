@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import '../../constants/app_colors.dart'; 
 import '../../constants/app_text_style.dart';
@@ -26,21 +27,23 @@ class MessageItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: isSelected ? const Color(0xFFF3F3F8) : Colors.transparent,
+      padding: const EdgeInsets.symmetric(vertical: 8), 
       child: Row(
         children: [
+          // Active state left border stripe indicator
           Container(
             width: 4,
-            height: 72,
-            color: isSelected ? const Color.fromARGB(255, 255, 107, 61) : Colors.transparent,
-                      
-
+            height: 56, 
+            color: isSelected ? const Color(0xFF008080) : Colors.transparent, 
           ),
           const SizedBox(width: 16),
+          
+          // User profile 
           Stack(
             children: [
               CircleAvatar(
                 radius: 26,
-                backgroundImage: NetworkImage(imageUrl),
+                backgroundImage: AssetImage(imageUrl), 
                 backgroundColor: AppColors.textSecondary.withValues(alpha: 0.2),
               ),
               if (isOnline)
@@ -51,9 +54,7 @@ class MessageItem extends StatelessWidget {
                     width: 12,
                     height: 12,
                     decoration: BoxDecoration(
-                      color:Color.fromARGB(255, 255, 107, 61),
-          
-
+                      color: const Color(0xFF4CD964),
                       shape: BoxShape.circle,
                       border: Border.all(color: Colors.white, width: 2),
                     ),
@@ -62,6 +63,8 @@ class MessageItem extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 16),
+          
+          
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,6 +89,8 @@ class MessageItem extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 8),
+          
+          
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: Column(
@@ -104,12 +109,12 @@ class MessageItem extends StatelessWidget {
                     width: 8,
                     height: 8,
                     decoration: const BoxDecoration(
-                      color: AppColors.primary,
+                      color: Color(0xFFFF8A73), 
                       shape: BoxShape.circle,
                     ),
                   )
                 else
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 8), 
               ],
             ),
           ),
