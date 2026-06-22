@@ -101,4 +101,3 @@ class _ExactStaggeredProfileGrid extends StatelessWidget {
   }
 }
 
-

@@ -1,98 +1,91 @@
+
 import 'package:flutter/material.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({super.key});
-@override
+
+  @override
   Widget build(BuildContext context) {
-    // Detect top system cutout padding 
     final double statusBarHeight = MediaQuery.of(context).padding.top;
 
-    return SliverAppBar(
-      expandedHeight: 200, 
-      pinned: true,
-      backgroundColor: Colors.white,
-      elevation: 0,
-      scrolledUnderElevation: 0,
-      automaticallyImplyLeading: false, 
-      leading: Padding(
-        padding: EdgeInsets.only(
-          left: 16.0, 
-          
-          top: statusBarHeight > 0 ? 4.0 : 8.0, 
-        ),
-        child: Align(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            width: 42,
-            height: 42,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-            ),
-            child: IconButton(
-              padding: EdgeInsets.zero,
-              icon: const Icon(
-                Icons.arrow_back_ios_new, 
-                color: Colors.black, 
-                size: 15,
-              ),
-              onPressed: () {},
-            ),
-          ),
-        ),
-      ),
-      
-      flexibleSpace: FlexibleSpaceBar(
-        background: Stack(
-          clipBehavior: Clip.none,
+    return SliverToBoxAdapter(
+      child: Container(
+        color: Colors.white,
+        child: Column(
           children: [
-            // Top background scenery wallpaper
-            Positioned.fill(
-              child: Image.network(
-                'assets/images/background_image.webp', 
-                fit: BoxFit.cover,
-              ),
-            ),
-            
-            // Profile picture avatar with circular border and shadow effect
-            Positioned(
-              bottom: -40, //offset to overlap the bottom of the app bar
-              left: 0,
-              right: 0,
-              child: Center(
-                child: Container(
-                  width: 96,
-                  height: 96,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    
-                    border: Border.all(
-                      color: const Color(0xFFE47E3A), 
-                      width: 3.5, // Matches the prominent profile ring style
-                    ),
-                    // Generates separation between the frame and the white bottom sheet layout
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.06),
-                        blurRadius: 10,
-                        offset: const Offset(0, 4),
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+               
+                SizedBox(
+                  height: 120 + statusBarHeight,
+                  width: double.infinity,
+                  child: Image.asset(
+                    'assets/images/background_image.webp',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+
+                // Back Button
+                Positioned(
+                  top: statusBarHeight + 12,
+                  left: 16,
+                  child: GestureDetector(
+                    onTap: () => Navigator.of(context).pop(),
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
                       ),
-                    ],
-                    image: const DecorationImage(
-                      image: NetworkImage('assets/images/girl.jpg'), 
-                      fit: BoxFit.cover,
+                      child: const Center(
+                        child: Icon(
+                          Icons.arrow_back_ios_new,
+                          color: Colors.black,
+                          size: 16,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
+
+                // Profile Image with White Frame
+                Positioned(
+                  bottom: -45,
+                  left: 0,
+                  right: 0,
+                  child: Center(
+                    child: Container(
+                      width: 90,
+                      height: 90,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 3.0,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.05),
+                            blurRadius: 8,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                        image: const DecorationImage(
+                          image: AssetImage('assets/images/girl.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
+            const SizedBox(height: 55),
           ],
         ),
       ),
     );
   }
 }
-
-     
-
-    

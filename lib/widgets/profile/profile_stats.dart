@@ -1,9 +1,18 @@
+
+
 import 'package:flutter/material.dart';
+
 class ProfileStats extends StatelessWidget {
   final String label;
   final String count;
-  const ProfileStats({super.key, required this.label, required this.count});
-@override
+
+  const ProfileStats({
+    super.key,
+    required this.label,
+    required this.count,
+  });
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -11,37 +20,39 @@ class ProfileStats extends StatelessWidget {
         Text(
           count,
           style: const TextStyle(
-            fontSize: 18, 
-            fontWeight: FontWeight.bold, 
+            fontSize: 15,
+            fontWeight: FontWeight.w600, 
             color: Colors.black,
-            letterSpacing: -0.5,
+            letterSpacing: -0.3,
           ),
         ),
-        const SizedBox(height: 6),
+        const SizedBox(height: 5),
         Text(
           label,
           style: const TextStyle(
-            fontSize: 13, 
-            color: Color(0xFF9E9E9E), 
-            fontWeight: FontWeight.w400,
+            fontSize: 12,
+            color: Color(0xFF8E8E93), 
+            fontWeight: FontWeight.w400, 
           ),
         ),
       ],
     );
   }
 }
+
+//divider line
 class StatDivider extends StatelessWidget {
   const StatDivider({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(width: 1, height: 18, color: const Color(0xFFE0E0E0));
+    return Container(
+      height: 25, 
+      width: 2,
+      color: Colors.black.withOpacity(0.08), 
+    );
   }
 }
-
-
-
-
 
 
 

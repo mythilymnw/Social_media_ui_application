@@ -1,76 +1,140 @@
+
 import 'package:flutter/material.dart';
 import 'profile_stats.dart';
+
 class ProfileInfoSection extends StatelessWidget {
   const ProfileInfoSection({super.key});
-@override
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 55, left: 32, right: 32, bottom: 8),
+      padding: const EdgeInsets.only(
+        top: 0,
+        left: 24,
+        right: 24,
+        bottom: 12,
+      ),
       child: Column(
         children: [
+          // Profile Name
           const Text(
-            'Rachelll  Flowear',
+            'Rachel Flowear',
             style: TextStyle(
-              fontSize: 22, 
-              fontWeight: FontWeight.w700, 
+              fontSize: 22,
+              fontWeight: FontWeight.w600, 
               color: Colors.black,
-              letterSpacing: -0.2,
+              letterSpacing: -0.3,
             ),
           ),
           const SizedBox(height: 2),
+
+          // Name
           const Text(
             '@rachelflow',
             style: TextStyle(
-              fontSize: 13, 
-              color: Color(0xFF9E9E9E),
+              fontSize: 12,
+              color: Colors.black45, 
+              fontWeight: FontWeight.w400,
             ),
           ),
-          const SizedBox(height: 24),
+
+          const SizedBox(height: 18),
+
+          // Stats Counter Row
           const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Expanded(child: ProfileStats(label: 'Posts', count: '240')),
-              StatDivider(),
-              Expanded(child: ProfileStats(label: 'Followers', count: '47,3K')),
-              StatDivider(),
-              Expanded(child: ProfileStats(label: 'Following', count: '32K')),
-            ],
-          ),
-          const SizedBox(height: 24),
-          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFF34E1E), 
-                    foregroundColor: Colors.white,
-                    // height: 46,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-                  ),
-                  child: const Text('Follow', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+                child: ProfileStats(
+                  label: 'Posts',
+                  count: '240',
                 ),
               ),
-              const SizedBox(width: 12),
+              StatDivider(),
               Expanded(
-                child: OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: const Color(0xFFF5F5F5), 
-                    foregroundColor: Colors.black,
-                    side: BorderSide.none,
-                    // height: 46,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-                  ),
-                  child: const Text('Message', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+                child: ProfileStats(
+                  label: 'Followers',
+                  count: '47.3K',
+                ),
+              ),
+              StatDivider(),
+              Expanded(
+                child: ProfileStats(
+                  label: 'Following',
+                  count: '32K',
                 ),
               ),
             ],
           ),
-        ],
-      ),
-    );
+
+          const SizedBox(height: 18),
+
+          // Action Buttons Row
+          Center(
+            child: SizedBox(
+              width: 280, 
+              child: Row(
+                children: [
+                  // Follow Button
+                  Expanded(
+                    child: SizedBox(
+                      height: 40, 
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFFA4A1E), 
+                          foregroundColor: Colors.white,
+                          elevation: 0,
+                          padding: EdgeInsets.zero, 
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(23), 
+                          ),
+                        ),
+                        child: const Text(
+                          'Follow',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(width: 12), 
+
+                  // Message Button
+                  Expanded(
+                    child: SizedBox(
+                      height: 40,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFF2F2F2), 
+                          foregroundColor: Colors.black,
+                          elevation: 0,
+                          padding: EdgeInsets.zero,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(23), 
+                          ),
+                        ),
+                        child: const Text(
+                          'Message',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ), 
+        ], 
+      ), 
+    ); 
   }
 }
