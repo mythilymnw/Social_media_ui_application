@@ -7,9 +7,12 @@ class StoriesSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 90,
+      
+      height: 65, 
       child: ListView(
         scrollDirection: Axis.horizontal,
+        
+        padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
         children: const [
           StoryAvatar(
             image: '',
@@ -28,7 +31,16 @@ class StoriesSection extends StatelessWidget {
             image: 'assets/images/background_image.webp',
             name: 'James',
           ),
+         
           StoryAvatar(
+            image: 'assets/images/profile1.jpeg',
+            name: 'Roés',
+          ),
+           StoryAvatar(
+            image: 'assets/images/profile1.jpeg',
+            name: 'Roés',
+          ),
+           StoryAvatar(
             image: 'assets/images/profile1.jpeg',
             name: 'Roés',
           ),
@@ -37,7 +49,6 @@ class StoriesSection extends StatelessWidget {
     );
   }
 }
-
 
 
 
