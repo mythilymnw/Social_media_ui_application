@@ -14,7 +14,7 @@ class Homescreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.background,
       
-      //Keeps the body scrolling smoothly underneath the curved navigation bar cut-out
+      //Keeps the body scrolling 
       extendBody: true, 
 
       // + button 
@@ -38,7 +38,7 @@ class Homescreen extends StatelessWidget {
                   profileImage: 'assets/images/girl.jpg',
                 ),
 
-                const SizedBox(height: 28),
+                const SizedBox(height: 10),
 
                 /// Title
                 const Text(
@@ -46,21 +46,21 @@ class Homescreen extends StatelessWidget {
                   style: AppTextStyles.heading,
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 8),
 
                 /// Stories
                 const StoriesSection(),
 
                 const SizedBox(height: 20),
 
-                /// First Post
+               
                 const PostCard(
                   image: "assets/images/profile1.jpeg",
                 ),
 
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
 
-                /// Second Post
+                
                 const PostCard(
                   image: "assets/images/profile1.jpeg",
                   showOverlay: false,
