@@ -6,65 +6,61 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 54,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      height: 52, 
       decoration: BoxDecoration(
-        color: const Color(0xFFF7F7F7),
-        borderRadius: BorderRadius.circular(18),
+        color: const Color(0xFFF5F5F5), 
+        borderRadius: BorderRadius.circular(24), 
       ),
-      child: const Row(
-        children: [
-          Icon(
-            Icons.search,
-            color: Color(0xFF9B9B9B),
-          ),
-          SizedBox(width: 12),
-          Expanded(
-            child: Text(
-              "Search",
-              style: TextStyle(
-                fontSize: 14,
-                color: Color(0xFF9B9B9B),
-              ),
+      child: TextField(
+       
+        textAlignVertical: TextAlignVertical.center,
+        style: const TextStyle(
+          fontSize: 16,
+          color: Color(0xFF1A1A1A),
+          height: 1.2, 
+        ),
+        decoration: InputDecoration(
+          
+          isDense: true, 
+          
+          contentPadding: const EdgeInsets.symmetric(vertical: 14), 
+          border: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          
+          prefixIcon: const Padding(
+            padding: EdgeInsets.only(left: 8, right: 4),
+            child: Icon(
+              Icons.search_rounded,
+              color: Color(0xFF9E9E9E),
+              size: 24,
             ),
           ),
-          Icon(
-            Icons.tune,
-            color: Color(0xFF9B9B9B),
+          prefixIconConstraints: const BoxConstraints(
+            minWidth: 44,
           ),
-        ],
+          
+          hintText: "Search",
+          hintStyle: const TextStyle(
+            fontSize: 16,
+            color: Color(0xFF9E9E9E),
+            fontWeight: FontWeight.w400,
+            height: 1.2, 
+          ),
+          
+          suffixIcon: const Padding(
+            padding: EdgeInsets.only(right: 8),
+            child: Icon(
+              Icons.tune_outlined,
+              color: Color(0xFF9E9E9E),
+              size: 22,
+            ),
+          ),
+          suffixIconConstraints: const BoxConstraints(
+            minWidth: 44,
+          ),
+        ),
       ),
     );
   }
 }
-
-
-
-// import 'package:flutter/material.dart';
-// class SearchBarWidget extends StatelessWidget {
-//   const SearchBarWidget({super.key});
-// @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       height: 50,
-//       padding: const EdgeInsets.symmetric(horizontal: 16),
-//       decoration: BoxDecoration(
-//          color: Colors.white,
-//         borderRadius: BorderRadius.circular(14),
-//       ),
-//       child:Row(
-//         children: const [
-//           Icon(Icons.search),
-//           SizedBox(width: 10),
-//           Text("Search"),
-//           Spacer(),
-//           Icon(Icons.tune),
-        
-
-
-
-// ],
-//       ),
-//     );
-//   }
-// }

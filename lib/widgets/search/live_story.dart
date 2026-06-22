@@ -18,7 +18,8 @@ class LiveStoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 110,
-      margin: const EdgeInsets.only(right: 12),
+     
+      margin: const EdgeInsets.only(right: 4), 
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(22),
         image: DecorationImage(
@@ -97,6 +98,4 @@ class LiveStoryCard extends StatelessWidget {
     );
   }
 }
-
-
 

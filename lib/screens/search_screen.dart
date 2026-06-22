@@ -36,11 +36,11 @@ class SearchScreen extends StatelessWidget {
                   profileImage: 'assets/images/girl.jpg',
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 15),
 
                 const SearchBarWidget(),
 
-                const SizedBox(height: 18),
+                const SizedBox(height: 15),
 
                 const LiveStoriesSection(),
 
@@ -49,12 +49,12 @@ class SearchScreen extends StatelessWidget {
                 const Text(
                   "Trending",
                   style: TextStyle(
-                    fontSize: 32,
+                    fontSize: 22,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
 
-                const SizedBox(height: 16),
+                const SizedBox(height: 12),
 
                 const TrendingPostCard(),
 
